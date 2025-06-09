@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AniDB - Discover Anime</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Inter", sans-serif;
+      }
+      body {
+        background: linear-gradient(to bottom, #0f111a, #151a28);
+        color: white;
+      }
+      header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1rem 2rem;
+        background-color: #0d1117;
+      }
+      .logo {
+        font-size: 1.5rem;
+        font-weight: bold;
+        color: #ffffff;
+      }
+      .logo span {
+        color: #318cfe;
+      }
+      nav a {
+        margin: 0 1rem;
+        text-decoration: none;
+        color: #ccc;
+      }
+      nav a:hover {
+        color: white;
+      }
+      .auth-buttons button {
+        margin-left: 1rem;
+        padding: 0.5rem 1rem;
+        border: none;
+        border-radius: 6px;
+        font-weight: 600;
+        cursor: pointer;
+      }
+      .login {
+        background: transparent;
+        color: #ccc;
+      }
+      .signup {
+        background: #318cfe;
+        color: white;
+      }
+      .filters {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 1rem;
+        padding: 2rem 1rem 1rem;
+      }
+      .filter {
+        background-color: #1e2538;
+        border-radius: 6px;
+        padding: 0.75rem 1rem;
+        border: none;
+        color: white;
+        min-width: 120px;
+      }
+      .trending {
+        padding: 2rem;
+      }
+      .trending h2 {
+        margin-bottom: 1rem;
+      }
+      .trending-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+        gap: 1rem;
+      }
+      .anime-card {
+        background: #1e2538;
+        border-radius: 8px;
+        overflow: hidden;
+        text-align: center;
+      }
+      .anime-card img {
+        width: 100%;
+        height: auto;
+        display: block;
+      }
+      .anime-title {
+        padding: 0.5rem;
+        font-size: 0.9rem;
+      }
+      @media (max-width: 768px) {
+        .filters {
+          flex-direction: column;
+          align-items: center;
+        }
+        nav,
+        .auth-buttons {
+          display: none;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="logo">A<span>L</span></div>
+      <nav>
+        <a href="#">Search</a>
+        <a href="#">Social</a>
+      </nav>
+      <div class="auth-buttons">
+        <button class="login">Login</button>
+        <button class="signup">Sign Up</button>
+      </div>
+    </header>
+
+    <div class="filters">
+      <select class="filter">
+        <option>Search</option>
+      </select>
+      <select class="filter">
+        <option>Genres</option>
+        <option>Action</option>
+        <option>Drama</option>
+      </select>
+      <select class="filter">
+        <option>Year</option>
+      </select>
+      <select class="filter">
+        <option>Season</option>
+      </select>
+      <select class="filter">
+        <option>Format</option>
+      </select>
+    </div>
+
+    <div class="trending">
+      <h2>Trending Now</h2>
+      <div class="trending-grid">
+        <div class="anime-card">
+          <img
+            src="https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx163132-IfAkMWRMU8Mx.png"
+            alt="Anime Cover"
+          />
+          <div class="anime-title">Kusuriya no Hitorigoto 2nd Season</div>
+        </div>
+        <div class="anime-card">
+          <img
+            src="https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx107564-kgM1R8EqzTK1.png"
+            alt="Anime Cover"
+          />
+          <div class="anime-title">Enen no Shouboutai: San no Shou</div>
+        </div>
+        <div class="anime-card">
+          <img
+            src="https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx21-YzWZkhcAN49g.jpg"
+            alt="Anime Cover"
+          />
+          <div class="anime-title">ONE PIECE</div>
+        </div>
+        <div class="anime-card">
+          <img
+            src="https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx156808-QImJZ5mLeRRO.jpg"
+            alt="Anime Cover"
+          />
+          <div class="anime-title">
+            Danjo no Yuujou wa Seiritsu suru? (Iya, Shinai!!)
+          </div>
+        </div>
+        <div class="anime-card">
+          <img
+            src="https://s4.anilist.co/file/anilistcdn/media/anime/cover/large/bx163132-IfAkMWRMU8Mx.png"
+            alt="Anime Cover"
+          />
+          <div class="anime-title">WIND BREAKER Season 2</div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

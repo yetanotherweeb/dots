@@ -1,0 +1,5 @@
+complete -c xdfm -a "add" -d "Add a new dotfile"
+complete -c xdfm -a "remove" -d "Remove an existing dotfile"
+complete -c xdfm -a "create" -d "Create a new category"
+complete -c xdfm -a "delete" -d "Delete a category"
+complete -c xdfm -a "github" -d "Push changes to GitHub"

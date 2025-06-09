@@ -1,0 +1,36 @@
+cmake_minimum_required(VERSION 3.12)
+
+project(anitr-cli VERSION 1.0 LANGUAGES CXX)
+
+set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
+
+# Derleme bayraklarını tanımla
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -O3 -march=native -flto -funroll-loops -ftree-vectorize")
+
+# 3 ayrı derleme komutu ekliyoruz
+add_custom_target(build_animecix-cli
+    COMMAND g++ ${CMAKE_SOURCE_DIR}/animecix-cli.cpp ${CMAKE_SOURCE_DIR}/modules/FetchAnimeciX.cpp -o ${CMAKE_BINARY_DIR}/animecix-cli -std=c++17 -lcurl -O3 -march=native -flto -funroll-loops -ftree-vectorize
+    COMMENT "Building animecix-cli"
+)
+
+add_custom_target(build_openanime-cli
+    COMMAND g++ ${CMAKE_SOURCE_DIR}/openanime-cli.cpp ${CMAKE_SOURCE_DIR}/modules/FetchOpenAnime.cpp -o ${CMAKE_BINARY_DIR}/openanime-cli -std=c++17 -lcurl -O3 -march=native -flto -funroll-loops -ftree-vectorize
+    COMMENT "Building openanime-cli"
+)
+
+add_custom_target(build_anitr-cli
+    COMMAND g++ ${CMAKE_SOURCE_DIR}/anitr-cli.cpp -o ${CMAKE_BINARY_DIR}/anitr-cli -std=c++17 -O3 -march=native -flto -funroll-loops -ftree-vectorize
+    COMMENT "Building anitr-cli"
+)
+
+# Derleme işlemlerini tetikleyen ana hedef
+add_custom_target(all_targets
+    DEPENDS build_animecix-cli build_openanime-cli build_anitr-cli
+)
+
+# Derleme sonrası taşıma işlemi
+add_custom_command(TARGET all_targets POST_BUILD
+    COMMAND ${CMAKE_COMMAND} -E copy ${CMAKE_BINARY_DIR}/animecix-cli ${CMAKE_BINARY_DIR}/openanime-cli ${CMAKE_BINARY_DIR}/anitr-cli ${CMAKE_SOURCE_DIR}/bin/
+    COMMENT "Copying executable files to the bin directory"
+)
