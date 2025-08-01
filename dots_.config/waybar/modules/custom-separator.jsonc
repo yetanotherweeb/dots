@@ -1,0 +1,8 @@
+{
+   "custom/separator": {
+      "format": "|",
+      "tooltip": false,
+      "interval": 0
+   },
+   "_comments": []
+}

@@ -1,0 +1,156 @@
+/**
+ *
+ * Author : Aditya Shakya (adi1090x)
+ * Github : @adi1090x
+ * 
+ * Rofi Theme File
+ * Rofi Version: 1.7.3
+ **/
+
+/*****----- Configuration -----*****/
+configuration {
+    show-icons:                 false;
+}
+
+/*****----- Global Properties -----*****/
+@import                          "../../theme.rasi"
+@import                          "../shared/fonts.rasi"
+
+* {
+    font:                        "JetBrains Mono Nerd Font 10";
+    background:                  #231419;
+    background-alt:              #2D1E23;
+    foreground:                  #FFFFFF;
+    selected:                    #426647;
+    active:                      #2E3F34;
+    urgent:                      #D08261;
+}
+
+/*
+USE_ICON=NO
+*/
+
+/*****----- Main Window -----*****/
+window {
+    transparency:                "real";
+    anchor:                      center;
+    fullscreen:                  false;
+    width:                       600px;
+    x-offset:                    0px;
+    y-offset:                    0px;
+    margin:                      0px;
+    padding:                     0px;
+    border:                      0px solid;
+    border-radius:               0px;
+    border-color:                @border-color;
+    cursor:                      "default";
+    background-color:            @main-bg;
+}
+
+/*****----- Main Box -----*****/
+mainbox {
+    enabled:                     true;
+    spacing:                     15px;
+    margin:                      0px;
+    padding:                     30px;
+    background-color:            @main-bg;
+    orientation:                 horizontal;
+    children:                    [ "imagebox", "listview" ];
+}
+
+/*****----- Imagebox -----*****/
+imagebox {
+    background-color:            @main-bg;
+    background-image:            url("~/.config/rofi/images/e.jpg", height);
+    children:                    [ "dummy", "inputbar", "dummy" ];
+}
+
+/*****----- Inputbar -----*****/
+inputbar {
+    enabled:                     true;
+    spacing:                     15px;
+    background-color:            @main-bg;
+    text-color:                  @main-fg;
+    children:                    [ "dummy", "textbox-prompt-colon", "prompt", "dummy"];
+}
+
+dummy{
+    background-color:            @main-bg;
+}
+textbox-prompt-colon {
+    enabled:                     true;
+    expand:                      false;
+    str:                         "";
+    padding:                     10px 13px;
+    border-radius:               0px;
+    background-color:            @main-bg;
+    text-color:                  @main-fg;
+}
+prompt {
+    enabled:                     true;
+    padding:                     10px;
+    border-radius:               0px;
+    background-color:            @main-bg;
+    text-color:                  @main-fg;
+}
+
+/*****----- Message -----*****/
+message {
+    enabled:                     true;
+    margin:                      0px;
+    padding:                     10px;
+    border:                      0px solid;
+    border-radius:               0px;
+    border-color:                @border-color;
+    background-color:            @main-bg;
+    text-color:                  @main-fg;
+}
+textbox {
+    background-color:            @main-bg;
+    text-color:                  @main-fg;
+    vertical-align:              0.5;
+    horizontal-align:            0.0;
+}
+
+/*****----- Listview -----*****/
+listview {
+    enabled:                     true;
+    columns:                     6;
+    lines:                       1;
+    cycle:                       true;
+    scrollbar:                   false;
+    layout:                      vertical;
+    
+    spacing:                     5px;
+    background-color:            @main-bg;
+    cursor:                      "default";
+}
+
+/*****----- Elements -----*****/
+element {
+    enabled:                     true;
+    padding:                     10px;
+    border:                      0px solid;
+    border-radius:               0px;
+    border-color:                @border-color;
+    background-color:            @main-bg;
+    text-color:                  @main-fg;
+    cursor:                      pointer;
+}
+element-text {
+    background-color:            @main-bg;
+    text-color:                  @main-fg;
+    cursor:                      inherit;
+    vertical-align:              0.5;
+    horizontal-align:            0.0;
+}
+element selected {
+    background-color:            var(select-bg);
+    text-color:                  var(select-fg);
+}
+
+element-text selected {
+    background-color:            var(select-bg);
+    text-color:                  var(select-fg);
+}
+

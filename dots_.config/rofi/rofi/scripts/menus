@@ -1,0 +1,24 @@
+#!/usr/bin/env bash
+location=""
+
+for arg in "$@"; do
+    if [[ "$arg" =~ ^location=(.*)$ ]]; then
+        location="${BASH_REMATCH[1]}"
+    fi
+done
+
+CONFIG_FILE="$HOME/.config/rofi/styles.ini"
+SECTION=$1
+
+type_val=$(crudini --get "$CONFIG_FILE" "$SECTION" type)
+style_val=$(crudini --get "$CONFIG_FILE" "$SECTION" style)
+
+if [ "$SECTION" = "powermenu" ]; then
+    dir="$HOME/.config/rofi/powermenu/$type_val"
+    theme="$style_val"
+    bash $HOME/.config/rofi/powermenu/$type_val/powermenu.sh "$dir" "$theme" "location=$location"
+else
+    dir="$HOME/.config/rofi/applets/$type_val"
+    theme="$style_val"
+    bash $HOME/.config/rofi/applets/bin/$SECTION.sh "$dir" "$theme" "location=$location"
+fi

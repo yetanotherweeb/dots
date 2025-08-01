@@ -1,0 +1,19 @@
+{
+    "custom/power": {
+        "format": "{0}",
+        "rotate": 0,
+        "exec": "echo ; echo  logout",
+        "on-click": "menus.sh powermenu location=3",
+        "menu": "on-click-right",
+        "menu-file": "${HYDE_WAYBAR_MENU_DIR:-$HOME/.local/share/waybar/menus}/power.xml",
+        "menu-actions": {
+            "shutdown-now": "systemctl shutdown now",
+            "shutdown-wait": "systemctl poweroff",
+            "reboot": "reboot",
+            "suspend": "systemctl suspend",
+            "hibernate": "systemctl hibernate"
+        },
+        "interval": 86400,
+        "tooltip": true
+    }
+}

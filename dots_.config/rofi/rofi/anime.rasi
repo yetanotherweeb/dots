@@ -1,0 +1,115 @@
+* {
+  font:   "Iosevka Nerd Font Medium 14";
+
+  bg0     : #1a1b26;
+  bg1     : #1f2335;
+  bg2     : #24283b;
+  bg3     : #414868;
+  fg0     : #c0caf5;
+  fg1     : #a9b1d6;
+  fg2     : #737aa2;
+  red     : #f7768e;
+  green   : #9ece6a;
+  yellow  : #e0af68;
+  blue    : #7aa2f7;
+  magenta : #9a7ecc;
+  cyan    : #4abaaf;
+
+  accent: @red;
+  urgent: @yellow;
+
+  background-color : transparent;
+  text-color       : @fg0;
+
+  margin  : 0;
+  padding : 0;
+  spacing : 0;
+}
+
+element-icon, element-text, scrollbar {
+  cursor: pointer;
+}
+
+window {
+  location : center;
+  width    : 360px;
+  x-offset : 0px;
+  y-offset : 0px;
+
+  background-color: @bg1;
+  border: 2px;
+  border-color: @bg3;
+  border-radius: 6px;
+}
+
+inputbar {
+  spacing  : 10px;
+  padding  : 8px 12px;
+  children : [ icon-search, entry ];
+
+  background-color: @bg0;
+}
+
+icon-search, entry, element-icon, element-text {
+  vertical-align: 0.5;
+}
+
+icon-search {
+  expand   : false;
+  filename : "search-symbolic";
+  size     : 18px;
+}
+
+textbox {
+  padding          : 8px 12px;
+  background-color : @bg2;
+}
+
+listview {
+  padding      : 8px 0px;
+  lines        : 15;
+  columns      : 1;
+  scrollbar    : true;
+  fixed-height : false;
+  dynamic      : true;
+}
+
+element {
+  padding : 8px 12px;
+  spacing : 12px;
+}
+
+element normal urgent {
+  text-color: @urgent;
+}
+
+element normal active {
+  text-color: @accent;
+}
+
+element alternate active {
+  text-color: @accent;
+}
+
+element selected {
+  text-color       : @bg1;
+  background-color : @accent;
+}
+
+element selected urgent {
+  background-color: @urgent;
+}
+
+element-icon {
+  size: 1em;
+}
+
+element-text {
+  text-color: inherit;
+}
+
+scrollbar {
+  handle-width : 6px;
+  handle-color : @fg2;
+  padding      : 0 6px;
+}

@@ -1,0 +1,53 @@
+#!/usr/bin/env bash
+
+# hygo-shell animation manager
+
+# Configuration paths
+confDir="${XDG_CONFIG_HOME:-$HOME/.config}"
+
+# Ensure hygo exists
+if ! command -v hygo &>/dev/null; then
+    echo "[hygo-shell] Error: 'hygo' command not found."
+    exit 1
+fi
+
+# Animation selection logic
+fn_select() {
+    animation_items=$(hygo animations list 2>/dev/null)
+
+    if [ -z "$animation_items" ]; then
+        notify-send -i "preferences-desktop-display" "Error" "No animations found via hygo"
+        exit 1
+    fi
+
+    font_scale="${ROFI_ANIMATION_SCALE:-${ROFI_SCALE:-10}}"
+    font_name="${ROFI_ANIMATION_FONT:-${ROFI_FONT:-JetBrainsMono Nerd Font}}"
+    font_override="* { font: \"$font_name $font_scale\"; }"
+
+    hypr_border=$(hyprctl -j getoption decoration:rounding | jq '.int')
+    wind_border=$((hypr_border * 3 / 2))
+    elem_border=$((hypr_border == 0 ? 5 : hypr_border))
+    hypr_width=$(hyprctl -j getoption general:border_size | jq '.int')
+    r_override="window{border:${hypr_width}px;border-radius:${wind_border}px;} wallbox{border-radius:${elem_border}px;} element{border-radius:${elem_border}px;}"
+
+    current=$(hygo animations current 2>/dev/null)
+
+    selected=$(printf "Disable\nTheme\n%s" "$animation_items" | rofi -dmenu -i -select "$current" \
+        -p "Select animation" \
+        -theme-str "entry { placeholder: 'Select animation...'; }" \
+        -theme-str "$font_override" \
+        -theme-str "$r_override" \
+        -theme clipboard)
+
+    [[ -z "$selected" ]] && exit 0
+
+    case "$selected" in
+        Disable) hygo animations set disable ;;
+        Theme)   hygo animations set theme   ;;
+        *)       hygo animations set "$selected" ;;
+    esac
+
+    notify-send -i "preferences-desktop-display" "Animation" "$selected"
+}
+
+fn_select

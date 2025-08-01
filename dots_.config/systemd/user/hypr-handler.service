@@ -1,0 +1,13 @@
+[Unit]
+Description=Hyprland Window Handler Script
+After=graphical-session.target
+
+[Service]
+Type=simple
+ExecStart=%h/.config/hypr/handler.sh
+Restart=on-failure
+RestartSec=2
+
+[Install]
+WantedBy=default.target
+

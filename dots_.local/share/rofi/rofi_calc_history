@@ -1,0 +1,55 @@
+1 + 1 = 2
+9 × 9 × 9 × 9 × 9 = 59049
+factorial(10) = 3628800
+factorial(10) × factorial(10) = 1,316818944E13
+factorial(10) × factorial2(10) × factorial(0) = 13934592000
+factorial(15) = 1307674368000
+sqrt(4) = 2
+second × 4 = 4 s
+meter × 4 = 4 m
+second·second = 1 s²
+attoare = 1 aa
+x × x = x²
+x × x × x = x³
+x × x × x × x = x⁴
+x × x × x × x = x⁴
+x × x × x × x × x = x⁵
+x × x × x × x × x × x = x⁶
+x × x × x × x × x × x × x = x⁷
+x × x × x × x × x × x × x × x = x⁸
+x × x × x × x × x × x × x × x × x = x⁹
+x × x × x × x × x × x × x × x × x × x = x^10
+x × x × x × x × x × x × x × x × x × x × x = x^11
+x × x × x × x × x × x × x × x × x × x × x × x = x^12
+x × x × x × x × x × x × x × x × x × x × x × x × x = x^13
+x × x × x × x × x × x × x × x × x × x × x × x × x × x = x^14
+x × x × x × x × x × x × x × x × x × x × x × x × x × x × x = x^15
+x × x × x × x × x × x × x × x × x × x × x × x × x × x × x × x = x^16
+x × x × x × x × x × x × x × x × x × x × x × x × x × x × x × x × x = x^17
+x × x × x × x × x × x × x × x × x × x × x × x × x × x × x × x × x × x = x^18
+x × x × x × x × x × x × x × x × x × x × x × x × x × x × x × x × x × x × x = x^19
+x × x × x × x × x × x × x × x × x × x × x × x × x × x × x × x × x × x × x × x = x^20
+x × x × x × x × x × x × x × x × x × x × x × x × x × x × x × x × x × x × x × x × x = x^21
+x × x × x × x × x × x × x × x × x × x × x × x × x × x × x × x × x × x × x × x × x × x = x^22
+x × x × x × x × x × x × x × x × x × x × x × x × x × x × x × x × x × x × x × x × x × x × x = x^23
+x × x × x × x × x × x × x × x × x × x × x × x × x × x × x × x × x × x × x × x × x × x × x × x = x^24
+x × x × x × x × x × x × x × x × x × x × x × x × x × x × x × x × x × x × x × x × x × x × x × x × x = x^25
+x × x × x × x × x × x × x × x × x × x × x × x × x × x × x × x × x × x × x × x × x × x × x × x × x × x = x^26
+x × x × x × x × x × x × x × x × x × x × x × x × x × x × x × x × x × x × x × x × x × x × x × x × x × x = x^26
+x × x × x × x × x × x × x × x × x × x × x × x × x × x × x × x × x × x × x × x × x × x × x × x × x × x × x × x = x^28
+centiliter × e ≈ 27,18281828 mL
+((10 seconds) = meter) = false
+((10 seconds) = meter) = false
+((10 seconds) = (minute·microtonne)) = false
+Please select interpretation of expressions with implicit multiplication.;;0 = Adaptive;1/2x = 1/(2x); 1/2 x = (1/2)x; 5 m/2 s = (5 m)/(2 s);;1 = Implicit multiplication first;1/2x = 1/(2x); 5 m/2 s = (5 m)/(2 s);;2 = Conventional;1/2x = (1/2)x; 5 m/2 s = (5 m/2)s;;Parsing mode: ;(10 seconds) / (minute·AtomicMassUnit) ≈ 0,1666666667 u^−1
+(1 meter) / 1 = 1 m
+(1 second) × 1 = 1 s
+1 second = 1 s
+1 meter = 1 m
+1 mile = 1,609344 km
+1 minute = 60 s
+600 hectobytes = 60 kB
+600 hours = 25 d
+((600 hours) = (minute·AtomicMassUnit)) = false
+25 + 12 = 37
+25 + 12 + 22 + 28 + 5 = 92

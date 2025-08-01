@@ -1,0 +1,70 @@
+#!/bin/bash
+set -euo pipefail
+
+CACHE_DIR="${XDG_CACHE_HOME:-$HOME/.cache}/hygo/landing"
+MPRIS_IMAGE="${CACHE_DIR}/mpris.png"
+MPRIS_LINK="${CACHE_DIR}/mpris.lnk"
+TEMP_ART="${CACHE_DIR}/mpris.art"
+FALLBACK_IMAGE="$HOME/.face.icon"
+
+# Ensure cache dir exists
+mkdir -p "$CACHE_DIR"
+
+# Find active player
+PLAYER="${1:-$(playerctl --list-all 2>/dev/null | head -n 1)}"
+
+# Helper: fallback to profile image
+use_fallback_image() {
+    [ -f "$FALLBACK_IMAGE" ] && cp -f "$FALLBACK_IMAGE" "$MPRIS_IMAGE"
+    pkill -USR2 hyprlock >/dev/null 2>&1 || true
+}
+
+# If no player found
+if [ -z "$PLAYER" ]; then
+    use_fallback_image
+    echo ""
+    exit 0
+fi
+
+STATUS="$(playerctl -p "$PLAYER" status 2>/dev/null || echo "Unknown")"
+TITLE="$(playerctl -p "$PLAYER" metadata title 2>/dev/null || echo "")"
+ARTIST="$(playerctl -p "$PLAYER" metadata artist 2>/dev/null || echo "")"
+ART_URL="$(playerctl -p "$PLAYER" metadata --format '{{mpris:artUrl}}' 2>/dev/null || echo "")"
+
+TITLE="${TITLE:-Unknown Track}"
+ARTIST="${ARTIST:-Unknown Artist}"
+
+# If not playing
+if [[ "$STATUS" != "Playing" ]]; then
+    use_fallback_image
+    echo "Paused: $TITLE - $ARTIST"
+    exit 0
+fi
+
+# If no art URL
+if [[ -z "$ART_URL" ]]; then
+    echo "Playing: $TITLE - $ARTIST"
+    pkill -USR2 hyprlock >/dev/null 2>&1 || true
+    exit 0
+fi
+
+# Skip download if already current
+if [[ "$ART_URL" == "$(cat "$MPRIS_LINK" 2>/dev/null || echo "")" ]] && [ -f "$MPRIS_IMAGE" ]; then
+    echo "Playing: $TITLE - $ARTIST"
+    exit 0
+fi
+
+# Save new URL
+echo "$ART_URL" >"$MPRIS_LINK"
+
+# Try to fetch and convert the image
+if curl -fsSL "$ART_URL" -o "$TEMP_ART" && [ -s "$TEMP_ART" ]; then
+    magick "$TEMP_ART" -quality 50 "$MPRIS_IMAGE" 2>/dev/null || use_fallback_image
+    echo "Playing: $TITLE - $ARTIST"
+    pkill -USR2 hyprlock >/dev/null 2>&1 || true
+else
+    use_fallback_image
+    echo "Playing: $TITLE - $ARTIST"
+fi
+
+exit 0

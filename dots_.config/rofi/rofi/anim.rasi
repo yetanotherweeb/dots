@@ -1,0 +1,77 @@
+// Config //
+configuration {
+    modi:                        "drun";
+    show-icons:                  true;
+    drun-display-format:         "{name}";
+    font:                        "JetBrainsMono Nerd Font 9";
+}
+
+@theme "~/.config/rofi/theme.rasi"
+
+// Main //
+window {
+    enabled:                     true;
+    fullscreen:                  false;
+    width:                       40em; // Daha dar genişlik için ayarlandı
+    height:                      30em; // Otomatik kaydırma için yeterli yükseklik
+    transparency:                "real";
+    cursor:                      "default";
+    spacing:                     0em;
+    padding:                     0em;
+	border:                      2px;
+    border-color:                @main-br;
+    background-color:            @main-bg;
+}
+mainbox {
+    enabled:                     true;
+    orientation:                 vertical;
+    children:                    [ "dummy" , "listview" ];
+    background-color:            transparent;
+}
+
+// Lists //
+listview {
+    enabled:                     true;
+    spacing:                     1em; // Butonlar arasında boşluk
+    padding:                     1em; // Dış boşluk
+    columns:                     1;   // Sütun sayısını 1 olarak ayarlandı
+    lines:                       0;   // Satır sayısı sınırsız (kaydırma aktif)
+    dynamic:                     true; // İçerik dinamik olarak ayarlanır
+    fixed-height:                false;
+    fixed-columns:               false; // Sütun genişliği dinamik
+    reverse:                     false;
+    cursor:                      "default";
+    background-color:            transparent;
+    text-color:                  @main-fg;
+}
+dummy {
+    padding:                     2em;
+    expand:                      false;
+    background-color:            transparent;
+}
+
+// Elements //
+element {
+    enabled:                     true;
+    spacing:                     0em;
+    padding:                     1.5em; // Buton yüksekliği
+    cursor:                      pointer;
+    background-color:            @main-bg;
+    text-color:                  @main-fg;
+    border-radius:               0.5em; // Hafif yuvarlatılmış köşeler
+    width:                       100%; // Buton genişliği tam
+}
+element selected.normal {
+    background-color:            @select-bg;
+    text-color:                  @select-fg;
+}
+element-icon {
+    enabled:                     false;
+}
+element-text {
+    vertical-align:              0.5;
+    horizontal-align:            0.5;
+    cursor:                      inherit;
+    background-color:            transparent;
+    text-color:                  inherit;
+}

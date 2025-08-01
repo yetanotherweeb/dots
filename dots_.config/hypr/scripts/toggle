@@ -1,0 +1,18 @@
+#!/bin/bash
+
+if [ -z "$1" ]; then
+    echo "Usage: $0 <command>"
+    exit 1
+fi
+
+CMD="$1"
+PID=$(pgrep -x "$CMD")
+
+if [ -n "$PID" ]; then
+    echo "$CMD is running (PID $PID), killing..."
+    kill "$PID"
+else
+    echo "$CMD is not running, starting..."
+    "$CMD" &
+fi
+
