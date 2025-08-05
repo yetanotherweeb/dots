@@ -1,6 +1,0 @@
-[Unit]
-Description=Smartctl hourly logger
-
-[Service]
-Type=oneshot
-ExecStart=/home/kamisaki/.local/bin/smartctl_logger.sh

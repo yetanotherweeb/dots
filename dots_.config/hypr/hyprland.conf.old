@@ -1,0 +1,32 @@
+$scrPath=$HOME/.config/hypr/scripts
+
+# == Basic Variables ==
+$mainMod = SUPER
+$terminal = kitty
+$browser = firefox
+$editor = code-oss
+$explorer = dolphin
+$lockscreen = hyprlock
+$idle = hypridle
+
+# == Environment Variables ==
+env = XDG_CURRENT_DESKTOP,Hyprland
+env = XDG_SESSION_TYPE,wayland
+env = MOZ_ENABLE_WAYLAND,1
+env = GDK_BACKEND,wayland,x11,*
+env = QT_QPA_PLATFORM,wayland;xcb
+env = QT_WAYLAND_DISABLE_WINDOWDECORATION,1
+env = QT_QPA_PLATFORMTHEME,qt6ct
+env = PATH,$HOME/.config/hypr/scripts:$PATH
+
+source = ./nvidia.conf
+source = ./monitors.conf
+source = ./startup.conf
+source = ./userprefs.conf
+source = ./keybindings.conf
+source = ./windowrules.conf
+
+source = ./animations.conf
+source = ./theme.conf
+
+source = ./workflow.conf

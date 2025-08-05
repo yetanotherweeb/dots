@@ -1,65 +1,41 @@
-prompt = '''
-{cwd} {git_branch}
-{character} '''
+import = "theme.toml"
 
+prompt = "{username}@{hostname}: {cwd} {git_branch} {git_status}\n{character} "
 prompt_right = "{time}"
-
 add_newline = true
 
-[time]
-format = "^(subtext0){time}^"
-time_format = "15:04:05"
+[hostname]
+format = "^(sapphire){hostname}^"
+
+[username]
+format = "^(peach){username}^"
 
 [cwd]
-format = "^(lavender){cwd}^"
+format = '^(lavender){cwd}^'
 max_length = 3
 
+[time]
+format = '^(subtext0){time}^'
+time_format = "15:04:05"
+
 [character]
-icon = "λ"
-format = "^(peach){character}^"
+icon = 'λ'
+format = '^(peach){character}^'
 
 [git_branch]
-format = "^(yellow)on^ ^(mauve) {branch}^"
+format = '^(yellow)on^ ^(mauve) {branch}^'
 
 [git_status]
-format = "^(red)[^{status}^(red)]^"
-clean_suffix = ""
-conflicted = "^(red)✖^"
-ahead = "^(red)⇡^"
-behind = "^(red)⇣^"
-diverged = "^(red)⇕^"
-up_to_date = "^(red)✓^"
-untracked = "^(red)?^"
-stashed = "^(red)S^"
-modified = "^(red)~^"
-staged = "^(red)+^"
-renamed = "^(red)»^"
-deleted = "^(red)✘^"
-
-[palette]
-rosewater = "#f5e0dc"
-flamingo = "#f2cdcd"
-pink = "#f5c2e7"
-mauve = "#cba6f7"
-red = "#f38ba8"
-maroon = "#eba0ac"
-peach = "#fab387"
-yellow = "#f9e2af"
-green = "#a6e3a1"
-teal = "#94e2d5"
-sky = "#89dceb"
-sapphire = "#74c7ec"
-blue = "#89b4fa"
-lavender = "#b4befe"
-text = "#cdd6f4"
-subtext1 = "#bac2de"
-subtext0 = "#a6adc8"
-overlay2 = "#9399b2"
-overlay1 = "#7f849c"
-overlay0 = "#6c7086"
-surface2 = "#585b70"
-surface1 = "#45475a"
-surface0 = "#313244"
-base = "#1e1e2e"
-mantle = "#181825"
-crust = "#11111b"
+format = '^(red)[^{status}^(red)]^'
+clean_suffix = ''
+conflicted = '^(red)✖^'
+ahead = '^(red)⇡^'
+behind = '^(red)⇣^'
+diverged = '^(red)⇕^'
+up_to_date = '^(red)✓^'
+untracked = '^(red)?^'
+stashed = '^(red)S^'
+modified = '^(red)~^'
+staged = '^(red)+^'
+renamed = '^(red)»^'
+deleted = '^(red)✘^'
