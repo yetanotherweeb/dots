@@ -2,7 +2,7 @@
 
 | Type            | Package(s)                                          |
 | --------------- | --------------------------------------------------- |
-| OS              | Arch Linux                                          |
+| OS              | Artix Linux                                         |
 | WM              | `hyprland`                                          |
 | Widgets and Bar | `quickshell`                                        |
 | Terminal        | `kitty`                                             |
@@ -13,6 +13,7 @@
 | Notifications   | `dunst`/`swaync`                                    |
 | Editor          | `Visual Studio Code`                                |
 
-# 👑
+--- 
 
+# 👑
 [end-4/dots-hyprland](https://github.com/end-4/dots-hyprland)

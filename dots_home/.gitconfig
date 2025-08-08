@@ -1,5 +1,5 @@
 [user]
-	email = 113219171+xeyossr@users.noreply.github.com
+	email = yeaweeb@duck.com
 	name = xeyossr
 [filter "lfs"]
 	required = true
@@ -10,6 +10,7 @@
 	defaultBranch = main
 [http]
 	postBuffer = 524288000
+	maxRequests = 10
 [alias]
     pushboth = "!f() { git push $1 main && git push $2 main; }; f"
 [url "git@github.com:"]

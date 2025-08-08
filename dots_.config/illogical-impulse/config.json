@@ -14,7 +14,7 @@
                 "requires_key": true
             }
         ],
-        "systemPrompt": "## Style\n- Use casual tone, don't be formal! Make sure you answer precisely without hallucination and prefer bullet points over walls of text. You can have a friendly greeting at the beginning of the conversation, but don't repeat the user's question\n\n## Context (ignore when irrelevant)\n- You are a helpful and inspiring sidebar assistant on a {DISTRO} Linux system\n- Desktop environment: {DE}\n- Current date & time: {DATETIME}\n- Focused app: {WINDOWCLASS}\n\n## Presentation\n- Use Markdown features in your response: \n  - **Bold** text to **highlight keywords** in your response\n  - **Split long information into small sections** with h2 headers and a relevant emoji at the start of it (for example `## 🐧 Linux`). Bullet points are preferred over long paragraphs, unless you're offering writing support or instructed otherwise by the user.\n- Asked to compare different options? You should firstly use a table to compare the main aspects, then elaborate or include relevant comments from online forums *after* the table. Make sure to provide a final recommendation for the user's use case!\n- Use LaTeX formatting for mathematical and scientific notations whenever appropriate. Enclose all LaTeX '$$' delimiters. NEVER generate LaTeX code in a latex block unless the user explicitly asks for it. DO NOT use LaTeX for regular documents (resumes, letters, essays, CVs, etc.).\n\nThanks!\n",
+        "systemPrompt": "## Style\n- Use casual tone, don't be formal! Make sure you answer precisely without hallucination and prefer bullet points over walls of text. You can have a friendly greeting at the beginning of the conversation, but don't repeat the user's question\n\n## Context (ignore when irrelevant)\n- You are a helpful and inspiring sidebar assistant on a {DISTRO} Linux system\n- Desktop environment: {DE}\n- Current date & time: {DATETIME}\n- Focused app: {WINDOWCLASS}\n\n## Presentation\n- Use Markdown features in your response: \n  - **Bold** text to **highlight keywords** in your response\n  - **Split long information into small sections** with h2 headers and a relevant emoji at the start of it (for example `## 🐧 Linux`). Bullet points are preferred over long paragraphs, unless you're offering writing support or instructed otherwise by the user.\n- Asked to compare different options? You should firstly use a table to compare the main aspects, then elaborate or include relevant comments from online forums *after* the table. Make sure to provide a final recommendation for the user's use case!\n- Use LaTeX formatting for mathematical and scientific notations whenever appropriate. Enclose all LaTeX '$$' delimiters. NEVER generate LaTeX code in a latex block unless the user explicitly asks for it. DO NOT use LaTeX for regular documents (resumes, letters, essays, CVs, etc.).\n",
         "tool": "functions"
     },
     "appearance": {
@@ -39,7 +39,7 @@
     },
     "audio": {
         "protection": {
-            "enable": true,
+            "enable": false,
             "maxAllowed": 90,
             "maxAllowedIncrease": 10
         }
@@ -49,13 +49,13 @@
         "clockY": -500,
         "fixedClockPosition": false,
         "parallax": {
-            "enableSidebar": true,
-            "enableWorkspace": true,
-            "workspaceZoom": 1
+            "enableSidebar": false,
+            "enableWorkspace": false,
+            "workspaceZoom": 1.07
         },
         "thumbnailPath": "",
-        "wallpaperDir": "/home/kamisaki/Pictures/Wallpapers",
-        "wallpaperPath": "/home/kamisaki/Pictures/Wallpapers/Konachan.com - 391916 sample.jpg",
+        "wallpaperDir": "",
+        "wallpaperPath": "/home/wrathioo/Pictures/Wallpapers/Konachan.com - 382107 sample_upscayl_3x_digital-art-4x.png",
         "wallpaperSelector": {
             "switchScript": "/home/kamisaki/.config/quickshell/ii/scripts/colors/switchwall.sh",
             "top": false
@@ -66,22 +66,22 @@
         "bottom": false,
         "cornerStyle": 0,
         "prayer": {
-            "city": "Binagadi",
-            "country": "Baku",
+            "city": "Baku",
+            "country": "Azerbaijan",
             "enable": true,
             "fetchInterval": 10,
             "method": "4"
         },
         "resources": {
-            "alwaysShowCpu": true,
+            "alwaysShowCpu": false,
             "alwaysShowSwap": true
         },
         "screenList": [
         ],
         "showBackground": true,
-        "topLeftIcon": "distro",
+        "topLeftIcon": "",
         "tray": {
-            "monochromeIcons": false
+            "monochromeIcons": true
         },
         "utilButtons": {
             "showColorPicker": false,
@@ -93,9 +93,9 @@
         },
         "verbose": false,
         "weather": {
-            "city": "Binagadi",
+            "city": "",
             "enable": false,
-            "enableGPS": false,
+            "enableGPS": true,
             "fetchInterval": 10,
             "useUSCS": false
         },
@@ -103,12 +103,12 @@
             "alwaysShowNumbers": false,
             "monochromeIcons": true,
             "showAppIcons": true,
-            "showNumberDelay": 200,
+            "showNumberDelay": 300,
             "shown": 7
         }
     },
     "battery": {
-        "automaticSuspend": false,
+        "automaticSuspend": true,
         "critical": 5,
         "low": 20,
         "suspend": 3
@@ -120,7 +120,7 @@
         "hoverToReveal": true,
         "ignoredAppRegexes": [
         ],
-        "monochromeIcons": false,
+        "monochromeIcons": true,
         "pinnedApps": [
             "org.kde.dolphin",
             "kitty"
@@ -134,14 +134,14 @@
         "translator": {
             "engine": "auto",
             "sourceLanguage": "auto",
-            "targetLanguage": "Türkçe"
+            "targetLanguage": "auto"
         }
     },
     "light": {
         "night": {
             "automatic": true,
             "colorTemperature": 5000,
-            "from": "20:00",
+            "from": "19:00",
             "to": "06:30"
         }
     },
@@ -159,7 +159,7 @@
         "columns": 5,
         "enable": true,
         "rows": 2,
-        "scale": 0.09
+        "scale": 0.14
     },
     "policies": {
         "ai": 1,
@@ -198,11 +198,11 @@
         }
     },
     "time": {
-        "dateFormat": "ddd dd/MM",
+        "dateFormat": "ddd, dd/MM",
         "format": "hh:mm"
     },
     "windows": {
-        "centerTitle": false,
-        "showTitlebar": false
+        "centerTitle": true,
+        "showTitlebar": true
     }
 }
