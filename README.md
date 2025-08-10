@@ -5,7 +5,7 @@
 | OS              | Artix Linux                                         |
 | WM              | `hyprland`                                          |
 | Widgets and Bar | `quickshell`                                        |
-| Terminal        | `kitty`                                             |
+| Terminal        | `foot`/`kitty`                                      |
 | Shell           | `fish`                                              |
 | Prompt          | [pulsarship](https://github.com/xeyossr/pulsarship) |
 | File Manager    | `dolphin`/`lf`                                      |
