@@ -15,3 +15,5 @@
     pushboth = "!f() { git push $1 main && git push $2 main; }; f"
 [url "git@github.com:"]
 	insteadOf = https://github.com/
+[url "git@gitlab.com:"]
+	insteadOf = https://gitlab.com/

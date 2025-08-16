@@ -2,6 +2,8 @@
 # VERSION: 3.0
 SETUVAR --export PULSARSHIP_CONFIG:/home/wrathioo/\x2econfig/pulsarship/pulsarship\x2etoml
 SETUVAR --export PULSARSHIP_SHELL:fish
+SETUVAR --export SHELL:/usr/bin/fish
+SETUVAR --export TTYO:/dev/tty1
 SETUVAR __fish_initialized:3800
 SETUVAR _fisher_jorgebucaran_2F_fisher_files:\x7e/\x2econfig/fish/functions/fisher\x2efish\x1e\x7e/\x2econfig/fish/completions/fisher\x2efish
 SETUVAR _fisher_plugins:jorgebucaran/fisher

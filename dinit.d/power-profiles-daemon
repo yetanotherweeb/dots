@@ -1,4 +1,0 @@
-type        = process
-command     = /usr/lib/power-profiles-daemon
-depends-on  = dbus
-restart     = true

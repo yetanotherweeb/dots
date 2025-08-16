@@ -9,8 +9,7 @@
 | Shell           | `fish`                                              |
 | Prompt          | [pulsarship](https://github.com/xeyossr/pulsarship) |
 | File Manager    | `dolphin`/`lf`                                      |
-| Launcher        | `rofi`                                              |
-| Notifications   | `dunst`/`swaync`                                    |
+| Notifications   | `hyprpm`                                            |
 | Editor          | `Visual Studio Code`                                |
 
 --- 

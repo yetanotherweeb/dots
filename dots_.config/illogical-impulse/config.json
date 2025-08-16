@@ -55,7 +55,7 @@
         },
         "thumbnailPath": "",
         "wallpaperDir": "",
-        "wallpaperPath": "/home/wrathioo/Pictures/Wallpapers/Konachan.com - 382107 sample_upscayl_3x_digital-art-4x.png",
+        "wallpaperPath": "/home/wrathioo/Pictures/Wallpapers/Artwork.jpg",
         "wallpaperSelector": {
             "switchScript": "/home/kamisaki/.config/quickshell/ii/scripts/colors/switchwall.sh",
             "top": false
@@ -81,7 +81,7 @@
         "showBackground": true,
         "topLeftIcon": "",
         "tray": {
-            "monochromeIcons": true
+            "monochromeIcons": false
         },
         "utilButtons": {
             "showColorPicker": false,
@@ -108,7 +108,7 @@
         }
     },
     "battery": {
-        "automaticSuspend": true,
+        "automaticSuspend": false,
         "critical": 5,
         "low": 20,
         "suspend": 3
@@ -134,14 +134,14 @@
         "translator": {
             "engine": "auto",
             "sourceLanguage": "auto",
-            "targetLanguage": "auto"
+            "targetLanguage": "English"
         }
     },
     "light": {
         "night": {
             "automatic": true,
             "colorTemperature": 5000,
-            "from": "19:00",
+            "from": "20:00",
             "to": "06:30"
         }
     },

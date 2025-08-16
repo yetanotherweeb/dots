@@ -1,13 +1,21 @@
-if status is-interactive
-    # Commands to run in interactive sessions can go here
-    fastfetch --config ascii-art.jsonc
-    set fish_greeting
-
+if status --is-login
+    if type -q Hyprland
+        if test (tty) = "/dev/tty1"
+            exec Hyprland
+        end
+    end
 end
 
-#starship init fish | source
+
+if status is-interactive
+    fastfetch --config ascii-art.jsonc
+    set fish_greeting
+end
+
+export PATH="$HOME/.local/bin:$PATH"
 set -Ux PULSARSHIP_CONFIG ~/.config/pulsarship/pulsarship.toml
 pulsarship init fish | source
+
 if test -f ~/.local/state/quickshell/user/generated/terminal/sequences.txt
     cat ~/.local/state/quickshell/user/generated/terminal/sequences.txt
 end
